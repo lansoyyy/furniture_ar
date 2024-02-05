@@ -29,9 +29,18 @@ class DetailsScreen extends StatelessWidget {
         },
       ),
       actions: <Widget>[
-        IconButton(
-          icon: SvgPicture.asset("assets/icons/bag.svg"),
+       IconButton(
+          icon: SvgPicture.asset(
+            "assets/icons/scan.svg",
+            height: SizeConfig.defaultSize! * 2.4, //24
+          ),
           onPressed: () {},
+        ),
+        Center(
+          child: Text(
+            "Scan",
+            style: TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
+          ),
         ),
         SizedBox(width: SizeConfig.defaultSize),
       ],

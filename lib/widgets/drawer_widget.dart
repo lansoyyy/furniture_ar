@@ -91,7 +91,7 @@ class _MyDrawerState extends State<DrawerWidget> {
               onTap: () {
                 showAboutDialog(
                     context: context,
-                    applicationName: 'Crop Analytical System',
+                    applicationName: 'FixTure',
                     applicationIcon: const Icon(
                       Icons.crop,
                     ),

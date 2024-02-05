@@ -51,25 +51,25 @@ class ProductDescription extends StatelessWidget {
               ),
             ),
             SizedBox(height: defaultSize * 3),
-            SizedBox(
-              width: double.infinity,
-              child: MaterialButton(
-                padding: EdgeInsets.all(defaultSize * 1.5),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                color: kPrimaryColor,
-                onPressed: press,
-                child: Text(
-                  "Add to Cart",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: defaultSize * 1.6,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
+            // SizedBox(
+            //   width: double.infinity,
+            //   child: MaterialButton(
+            //     padding: EdgeInsets.all(defaultSize * 1.5),
+            //     shape: RoundedRectangleBorder(
+            //       borderRadius: BorderRadius.circular(50),
+            //     ),
+            //     color: kPrimaryColor,
+            //     onPressed: press,
+            //     child: Text(
+            //       "Add to Cart",
+            //       style: TextStyle(
+            //         color: Colors.white,
+            //         fontSize: defaultSize * 1.6,
+            //         fontWeight: FontWeight.bold,
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
