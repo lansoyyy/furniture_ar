@@ -35,7 +35,7 @@ class ContactusPage extends StatelessWidget {
                   width: 20,
                 ),
                 TextRegular(
-                    text: 'algovision123@gmail.com',
+                    text: 'angelicasabularse01@gmail.com ',
                     fontSize: 16,
                     color: Colors.grey),
               ],
@@ -60,7 +60,7 @@ class ContactusPage extends StatelessWidget {
                   width: 20,
                 ),
                 TextRegular(
-                    text: 'facebook.com/algovision',
+                    text: 'facebook.com/angelica.c.sabularse',
                     fontSize: 16,
                     color: Colors.grey),
               ],
@@ -85,7 +85,7 @@ class ContactusPage extends StatelessWidget {
                   width: 20,
                 ),
                 TextRegular(
-                    text: '+639639530422', fontSize: 16, color: Colors.grey),
+                    text: '+639760419218', fontSize: 16, color: Colors.grey),
               ],
             ),
             const SizedBox(
@@ -110,8 +110,7 @@ class ContactusPage extends StatelessWidget {
                 SizedBox(
                   width: 200,
                   child: TextRegular(
-                      text:
-                          'Misamis Oriental, Cagayan De Oro City, Philippines, 9000',
+                      text: 'San Antonio, Sto. Tomas City, Batangas',
                       fontSize: 16,
                       color: Colors.grey),
                 ),
