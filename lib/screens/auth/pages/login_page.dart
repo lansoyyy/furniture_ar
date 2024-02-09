@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../home/home_screen.dart';
 import '../components/app_text_form_field.dart';
-import '../resources/vectors.dart';
 import '../utils/extensions.dart';
 import '../values/app_colors.dart';
 import '../values/app_constants.dart';
@@ -170,72 +168,72 @@ class _LoginPageState extends State<LoginPage> {
                       child: const Text('Login'),
                     ),
                     const SizedBox(
-                      height: 30,
+                      height: 100,
                     ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Divider(
-                            color: Colors.grey.shade200,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 20,
-                          ),
-                          child: Text(
-                            'Or login with',
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodySmall
-                                ?.copyWith(color: Colors.black),
-                          ),
-                        ),
-                        Expanded(
-                          child: Divider(
-                            color: Colors.grey.shade200,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: OutlinedButton.icon(
-                            onPressed: () {},
-                            style: Theme.of(context).outlinedButtonTheme.style,
-                            icon: SvgPicture.asset(
-                              Vectors.googleIcon,
-                              width: 14,
-                            ),
-                            label: const Text(
-                              'Google',
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 20,
-                        ),
-                        Expanded(
-                          child: OutlinedButton.icon(
-                            onPressed: () {},
-                            style: Theme.of(context).outlinedButtonTheme.style,
-                            icon: SvgPicture.asset(
-                              Vectors.facebookIcon,
-                              width: 14,
-                            ),
-                            label: const Text(
-                              'Facebook',
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                    // Row(
+                    //   children: [
+                    //     Expanded(
+                    //       child: Divider(
+                    //         color: Colors.grey.shade200,
+                    //       ),
+                    //     ),
+                    //     Padding(
+                    //       padding: const EdgeInsets.symmetric(
+                    //         horizontal: 20,
+                    //       ),
+                    //       child: Text(
+                    //         'Or login with',
+                    //         style: Theme.of(context)
+                    //             .textTheme
+                    //             .bodySmall
+                    //             ?.copyWith(color: Colors.black),
+                    //       ),
+                    //     ),
+                    //     Expanded(
+                    //       child: Divider(
+                    //         color: Colors.grey.shade200,
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
+                    // const SizedBox(
+                    //   height: 30,
+                    // ),
+                    // Row(
+                    //   children: [
+                    //     Expanded(
+                    //       child: OutlinedButton.icon(
+                    //         onPressed: () {},
+                    //         style: Theme.of(context).outlinedButtonTheme.style,
+                    //         icon: SvgPicture.asset(
+                    //           Vectors.googleIcon,
+                    //           width: 14,
+                    //         ),
+                    //         label: const Text(
+                    //           'Google',
+                    //           style: TextStyle(color: Colors.black),
+                    //         ),
+                    //       ),
+                    //     ),
+                    //     const SizedBox(
+                    //       width: 20,
+                    //     ),
+                    //     Expanded(
+                    //       child: OutlinedButton.icon(
+                    //         onPressed: () {},
+                    //         style: Theme.of(context).outlinedButtonTheme.style,
+                    //         icon: SvgPicture.asset(
+                    //           Vectors.facebookIcon,
+                    //           width: 14,
+                    //         ),
+                    //         label: const Text(
+                    //           'Facebook',
+                    //           style: TextStyle(color: Colors.black),
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
                   ],
                 ),
               ),

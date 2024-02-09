@@ -3,8 +3,35 @@ import 'package:flutter/material.dart';
 import '../../widgets/drawer_widget.dart';
 import '../../widgets/text_widget.dart';
 
-class AboutusPage extends StatelessWidget {
+class AboutusPage extends StatefulWidget {
   const AboutusPage({Key? key}) : super(key: key);
+
+  @override
+  State<AboutusPage> createState() => _AboutusPageState();
+}
+
+class _AboutusPageState extends State<AboutusPage> {
+  String aboutUsContent = '''
+Welcome to Fixture, your ultimate destination for transforming your living space with augmented reality furniture solutions.
+
+At Fixture, we understand the importance of creating a home that reflects your unique style and personality. Our innovative AR technology allows you to visualize how different furniture pieces will look and fit in your space before making any commitments. Say goodbye to guesswork and hello to confidence in your design decisions.
+
+Our mission is to make furniture shopping an enjoyable and hassle-free experience. Whether you're furnishing a new home, redesigning a room, or simply looking for inspiration, Fixture is here to help every step of the way.
+
+Why choose Fixture?
+
+1. Seamless AR Experience: Our cutting-edge AR technology provides realistic 3D models of furniture items, allowing you to virtually place them in your room and see how they complement your existing decor.
+
+2. Extensive Catalog: Explore thousands of high-quality furniture items from top brands and designers. From sofas and tables to lighting and accessories, we have everything you need to create your dream space.
+
+3. Personalized Recommendations: Receive tailored recommendations based on your style preferences, budget, and room dimensions. Our goal is to help you find the perfect pieces that meet your needs and exceed your expectations.
+
+4. Convenient Shopping: Shop directly from the app with just a few taps. Enjoy hassle-free delivery and easy returns, so you can focus on designing your space without any worries.
+
+5. Expert Support: Our team of design experts is here to assist you with any questions or concerns you may have. Whether you need advice on furniture placement or tips for mixing and matching styles, we're always ready to help.
+
+Join the thousands of satisfied customers who have transformed their homes with Fixture. Download our app today and start designing the home of your dreams with confidence.
+''';
 
   @override
   Widget build(BuildContext context) {
@@ -24,27 +51,16 @@ class AboutusPage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              TextBold(text: 'Who we are', fontSize: 24, color: Colors.black),
+              TextBold(
+                  text: 'About FixTure', fontSize: 24, color: Colors.black),
               const SizedBox(
                 height: 10,
               ),
               TextRegular(
-                  text:
-                      'At Algo Vision, we are a team of passionate student innovators based in Cagayan de Oro City, Philippines. Our mission is to provide top-notch software solutions to businesses and individuals who are seeking to streamline their processes and enhance their digital presence.\n\nWe believe that technology has the power to transform the world, and we are committed to creating innovative and user-friendly products that deliver value to our clients. Our team is composed of talented individuals with diverse backgrounds and skill sets, who are united by our shared passion for technology and innovation.\n\nAs a startup, we are agile and constantly evolving, always seeking to improve and stay ahead of the curve. We pride ourselves on our ability to listen to our clients needs and create customized solutions that meet their unique requirements.\n\nThank you for considering Algo Vision as your partner in digital transformation. We look forward to helping you achieve your goals through the power of technology.',
-                  fontSize: 14,
-                  color: Colors.grey),
+                  text: aboutUsContent, fontSize: 14, color: Colors.grey),
               const SizedBox(
                 height: 50,
               ),
-              TextBold(text: 'What we do', fontSize: 24, color: Colors.black),
-              const SizedBox(
-                height: 10,
-              ),
-              TextRegular(
-                  text:
-                      'At Algo Vision, we specialize in providing innovative software solutions that empower businesses and individuals to thrive in the digital age. Our team of talented developers and designers work together to create custom software applications that are tailored to our clients unique needs and goals.\n\nWe offer a wide range of services, including but not limited to:\n\nSoftware development: We build software applications from scratch, using the latest tools and technologies to create scalable, secure, and user-friendly solutions.\n\nWeb development: We design and develop websites that are responsive, visually appealing, and optimized for search engines.\n\nMobile app development: We create native and hybrid mobile applications for iOS and Android, with a focus on delivering a seamless user experience.\n\nE-commerce solutions: We help businesses establish and grow their online presence by developing e-commerce platforms that are secure, efficient, and user-friendly.\n\nUI/UX design: We create intuitive and visually stunning user interfaces that enhance the overall user experience and drive engagement.\n\nAt Algo Vision, we are committed to delivering high-quality software solutions that meet our clients needs and exceed their expectations. We work closely with our clients throughout the development process to ensure that our solutions are aligned with their goals and objectives.\n\nContact us today to learn more about how we can help you leverage the power of technology to achieve your business goals.',
-                  fontSize: 14,
-                  color: Colors.grey),
               const SizedBox(
                 height: 20,
               ),
