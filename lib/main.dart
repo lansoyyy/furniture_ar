@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:furniture_app/constants.dart';
 import 'package:furniture_app/screens/auth/pages/login_page.dart';
@@ -7,6 +8,8 @@ import 'package:furniture_app/screens/auth/values/app_routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:camera/camera.dart';
 
+import 'firebase_options.dart';
+
 List<CameraDescription> cameras = [];
 Future<void> main() async {
   try {
@@ -15,6 +18,11 @@ Future<void> main() async {
   } on CameraException catch (e) {
     print(e.description);
   }
+
+  await Firebase.initializeApp(
+    name: 'furniture-app-54ad7',
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -24,7 +32,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Furniture App',
+      title: 'FixTure',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         // Here we set DM Sans as our default fonts
