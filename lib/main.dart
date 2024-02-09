@@ -5,8 +5,16 @@ import 'package:furniture_app/screens/auth/pages/register_page.dart';
 import 'package:furniture_app/screens/auth/values/app_constants.dart';
 import 'package:furniture_app/screens/auth/values/app_routes.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:camera/camera.dart';
 
-void main() {
+List<CameraDescription> cameras = [];
+Future<void> main() async {
+  try {
+    WidgetsFlutterBinding.ensureInitialized();
+    cameras = await availableCameras();
+  } on CameraException catch (e) {
+    print(e.description);
+  }
   runApp(MyApp());
 }
 

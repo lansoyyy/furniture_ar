@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:furniture_app/screens/pages/aboutus_page.dart';
+import 'package:furniture_app/screens/pages/contactus_page.dart';
 import 'package:furniture_app/widgets/text_widget.dart';
 
 import '../screens/home/home_screen.dart';
@@ -67,8 +69,8 @@ class _MyDrawerState extends State<DrawerWidget> {
                 color: Colors.black,
               ),
               onTap: () {
-                // Navigator.of(context).pushReplacement(MaterialPageRoute(
-                //     builder: (context) => const ContactusScreen()));
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (context) => const ContactusPage()));
               },
             ),
             ListTile(
@@ -78,8 +80,8 @@ class _MyDrawerState extends State<DrawerWidget> {
                 color: Colors.black,
               ),
               onTap: () {
-                // Navigator.of(context).pushReplacement(MaterialPageRoute(
-                //     builder: (context) => const AboutusScreen()));
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (context) => const AboutusPage()));
               },
             ),
             ListTile(

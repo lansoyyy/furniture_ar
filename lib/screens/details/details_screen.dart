@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:furniture_app/constants.dart';
 import 'package:furniture_app/models/Product.dart';
+import 'package:furniture_app/samp.dart';
 import 'package:furniture_app/size_config.dart';
 
 import 'components/body.dart';
@@ -29,12 +30,17 @@ class DetailsScreen extends StatelessWidget {
         },
       ),
       actions: <Widget>[
-       IconButton(
+        IconButton(
           icon: SvgPicture.asset(
             "assets/icons/scan.svg",
             height: SizeConfig.defaultSize! * 2.4, //24
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => HelloWorld(
+                      image: product.image,
+                    )));
+          },
         ),
         Center(
           child: Text(

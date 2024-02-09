@@ -31,6 +31,7 @@ dependencies:
   google_fonts:
   http:
   arcore_flutter_plugin: ^0.1.0
+  ar_core:
 
 dev_dependencies:
   flutter_test:
@@ -47,6 +48,7 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/
     - assets/icons/
     - assets/ripple.gif
     - assets/spinner.gif
