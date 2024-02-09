@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:furniture_app/constants.dart';
 import 'package:furniture_app/screens/home/components/body.dart';
 import 'package:furniture_app/size_config.dart';
 import 'package:furniture_app/widgets/drawer_widget.dart';
+import 'package:furniture_app/widgets/text_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -30,7 +30,8 @@ class HomeScreen extends StatelessWidget {
           },
         );
       }),
-     
+      title: TextBold(text: 'HOME', fontSize: 18, color: Colors.black),
+      centerTitle: true,
     );
   }
 }

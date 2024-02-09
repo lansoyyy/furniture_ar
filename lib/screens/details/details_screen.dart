@@ -44,7 +44,7 @@ class DetailsScreen extends StatelessWidget {
         ),
         Center(
           child: Text(
-            "Scan",
+            "View",
             style: TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
           ),
         ),

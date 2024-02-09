@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furniture_app/screens/auth/pages/login_page.dart';
 import 'package:furniture_app/screens/pages/aboutus_page.dart';
 import 'package:furniture_app/screens/pages/contactus_page.dart';
 import 'package:furniture_app/widgets/text_widget.dart';
@@ -132,9 +133,9 @@ class _MyDrawerState extends State<DrawerWidget> {
                             ),
                             MaterialButton(
                               onPressed: () {
-                                // Navigator.of(context).pushReplacement(
-                                //     MaterialPageRoute(
-                                //         builder: (context) => LoginScreen()));
+                                Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                        builder: (context) => LoginPage()));
                               },
                               child: const Text(
                                 'Continue',
