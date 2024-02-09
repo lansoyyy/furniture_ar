@@ -1,5 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:furniture_app/widgets/text_widget.dart';
 
+import '../../../widgets/textfield_widget.dart';
+import '../../../widgets/toast_widget.dart';
 import '../../home/home_screen.dart';
 import '../components/app_text_form_field.dart';
 import '../utils/extensions.dart';
@@ -131,7 +135,106 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: ((context) {
+                            final formKey = GlobalKey<FormState>();
+                            final TextEditingController emailController =
+                                TextEditingController();
+
+                            return AlertDialog(
+                              title: TextRegular(
+                                text: 'Forgot Password',
+                                fontSize: 14,
+                                color: Colors.black,
+                              ),
+                              content: Form(
+                                key: formKey,
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    TextFieldWidget(
+                                      hint: 'Email',
+                                      textCapitalization:
+                                          TextCapitalization.none,
+                                      inputType: TextInputType.emailAddress,
+                                      label: 'Email',
+                                      controller: emailController,
+                                      validator: (value) {
+                                        if (value == null || value.isEmpty) {
+                                          return 'Please enter an email address';
+                                        }
+                                        final emailRegex = RegExp(
+                                            r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+                                        if (!emailRegex.hasMatch(value)) {
+                                          return 'Please enter a valid email address';
+                                        }
+                                        return null;
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: (() {
+                                    Navigator.pop(context);
+                                  }),
+                                  child: TextRegular(
+                                    text: 'Cancel',
+                                    fontSize: 12,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                TextButton(
+                                  onPressed: (() async {
+                                    if (formKey.currentState!.validate()) {
+                                      try {
+                                        Navigator.pop(context);
+                                        await FirebaseAuth.instance
+                                            .sendPasswordResetEmail(
+                                                email: emailController.text);
+                                        showToast(
+                                            'Password reset link sent to ${emailController.text}');
+                                      } catch (e) {
+                                        String errorMessage = '';
+
+                                        if (e is FirebaseException) {
+                                          switch (e.code) {
+                                            case 'invalid-email':
+                                              errorMessage =
+                                                  'The email address is invalid.';
+                                              break;
+                                            case 'user-not-found':
+                                              errorMessage =
+                                                  'The user associated with the email address is not found.';
+                                              break;
+                                            default:
+                                              errorMessage =
+                                                  'An error occurred while resetting the password.';
+                                          }
+                                        } else {
+                                          errorMessage =
+                                              'An error occurred while resetting the password.';
+                                        }
+
+                                        showToast(errorMessage);
+                                        Navigator.pop(context);
+                                      }
+                                    }
+                                  }),
+                                  child: TextRegular(
+                                    text: 'Continue',
+                                    fontSize: 14,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            );
+                          }),
+                        );
+                      },
                       style: Theme.of(context).textButtonTheme.style,
                       child: Text(
                         'Forgot Password?',
@@ -147,15 +250,7 @@ class _LoginPageState extends State<LoginPage> {
                     FilledButton(
                       onPressed: _formKey.currentState?.validate() ?? false
                           ? () {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('Logged In!'),
-                                ),
-                              );
-                              emailController.clear();
-                              passwordController.clear();
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => HomeScreen()));
+                              login(context);
                             }
                           : null,
                       style: const ButtonStyle().copyWith(
@@ -269,5 +364,29 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  login(context) async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
+      showToast('Logged in succesfully!');
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => HomeScreen()));
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        showToast("No user found with that email.");
+      } else if (e.code == 'wrong-password') {
+        showToast("Wrong password provided for that user.");
+      } else if (e.code == 'invalid-email') {
+        showToast("Invalid email provided.");
+      } else if (e.code == 'user-disabled') {
+        showToast("User account has been disabled.");
+      } else {
+        showToast("An error occurred: ${e.message}");
+      }
+    } on Exception catch (e) {
+      showToast("An error occurred: $e");
+    }
   }
 }

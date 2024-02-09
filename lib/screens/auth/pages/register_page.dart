@@ -1,5 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:furniture_app/services/add_user.dart';
 
+import '../../../widgets/toast_widget.dart';
+import '../../home/home_screen.dart';
 import '../components/app_text_form_field.dart';
 import '../utils/extensions.dart';
 import '../values/app_colors.dart';
@@ -230,15 +234,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   FilledButton(
                     onPressed: _formKey.currentState?.validate() ?? false
                         ? () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text('Registration Complete!'),
-                              ),
-                            );
-                            nameController.clear();
-                            emailController.clear();
-                            passwordController.clear();
-                            confirmPasswordController.clear();
+                            register(context);
                           }
                         : null,
                     style: const ButtonStyle().copyWith(
@@ -285,5 +281,33 @@ class _RegisterPageState extends State<RegisterPage> {
         ),
       ),
     );
+  }
+
+  register(context) async {
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
+
+      // addUser(nameController.text, contactnumberController.text,
+      //     addressController.text, emailController.text);
+
+      addUser(emailController.text, nameController.text);
+
+      showToast('Account created succesfully!');
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => HomeScreen()));
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        showToast('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        showToast('The account already exists for that email.');
+      } else if (e.code == 'invalid-email') {
+        showToast('The email address is not valid.');
+      } else {
+        showToast(e.toString());
+      }
+    } on Exception catch (e) {
+      showToast("An error occurred: $e");
+    }
   }
 }
