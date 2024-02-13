@@ -8,16 +8,21 @@ import 'package:furniture_app/size_config.dart';
 import 'components/body.dart';
 
 class DetailsScreen extends StatelessWidget {
-  final Product product;
-// Thats means we have to  pass it
-  const DetailsScreen({required this.product}) : super();
+  var data;
+
+  DetailsScreen({
+    required this.data,
+  });
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
       backgroundColor: kSecondaryColor,
       appBar: buildAppBar(context),
-      body: Body(product: product),
+      body: Body(
+        data: data,
+      ),
     );
   }
 

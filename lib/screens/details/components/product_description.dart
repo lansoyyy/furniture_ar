@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:furniture_app/models/Product.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -10,7 +9,7 @@ class ProductDescription extends StatelessWidget {
     required this.press,
   }) : super();
 
-  final Product product;
+  final String product;
   final VoidCallback press;
 
   @override
@@ -36,15 +35,7 @@ class ProductDescription extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              product.subTitle,
-              style: TextStyle(
-                fontSize: defaultSize * 1.8,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: defaultSize * 3),
-            Text(
-              product.description,
+              product,
               style: TextStyle(
                 color: kTextColor.withOpacity(0.7),
                 height: 1.5,

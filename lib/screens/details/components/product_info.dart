@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:furniture_app/models/Product.dart';
 
 import '../../../constants.dart';
 import '../../../size_config.dart';
@@ -10,7 +9,7 @@ class ProductInfo extends StatelessWidget {
     required this.product,
   }) : super();
 
-  final Product product;
+  final product;
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +26,10 @@ class ProductInfo extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(product.category.toUpperCase(), style: lightTextStyle),
+            Text('Product', style: lightTextStyle),
             SizedBox(height: defaultSize),
             Text(
-              product.title,
+              product['name'],
               style: TextStyle(
                 fontSize: defaultSize * 2.4, //24
                 fontWeight: FontWeight.bold,
@@ -38,16 +37,7 @@ class ProductInfo extends StatelessWidget {
                 height: 1.4,
               ),
             ),
-            SizedBox(height: defaultSize * 2),
-            Text("Form", style: lightTextStyle),
-            Text(
-              "\$${product.price}",
-              style: TextStyle(
-                fontSize: defaultSize * 1.6, //16
-                fontWeight: FontWeight.bold,
-                height: 1.6,
-              ),
-            ),
+
             SizedBox(height: defaultSize * 2), //20
             Text("Available Colors", style: lightTextStyle),
             Row(

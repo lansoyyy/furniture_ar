@@ -9,9 +9,15 @@ class CategoryCard extends StatelessWidget {
   const CategoryCard({
     // It means we have  to add category
     required this.category,
+    required this.name,
+    required this.numbers,
+    required this.image,
   }) : super();
 
   final Category category;
+  final String name;
+  final String numbers;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +42,10 @@ class CategoryCard extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
-                        TitleText(title: category.title),
+                        TitleText(title: name),
                         SizedBox(height: defaultSize),
                         Text(
-                          "${category.numOfProducts}+ Products",
+                          "${numbers} Products",
                           style: TextStyle(
                             color: kTextColor.withOpacity(0.6),
                           ),
@@ -53,13 +59,8 @@ class CategoryCard extends StatelessWidget {
                 top: 0,
                 left: 0,
                 right: 0,
-                child: AspectRatio(
-                  aspectRatio: 1.15,
-                  child: FadeInImage.assetNetwork(
-                    placeholder: "assets/spinner.gif",
-                    image: category.image,
-                  ),
-                ),
+                child:
+                    AspectRatio(aspectRatio: 1.15, child: Image.asset(image)),
               ),
             ],
           ),

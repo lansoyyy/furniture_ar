@@ -6,9 +6,9 @@ import 'product_description.dart';
 import 'product_info.dart';
 
 class Body extends StatelessWidget {
-  final Product product;
+  var data;
 
-  const Body({required this.product}) : super();
+  Body({required this.data});
   @override
   Widget build(BuildContext context) {
     double defaultSize = SizeConfig.defaultSize!;
@@ -21,13 +21,13 @@ class Body extends StatelessWidget {
         child: Stack(
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            ProductInfo(product: product),
+            ProductInfo(product: data),
             Positioned(
               top: defaultSize * 37.5,
               left: 0,
               right: 0,
               child: ProductDescription(
-                product: product,
+                product: data['description'],
                 press: () {},
               ),
             ),
@@ -36,8 +36,8 @@ class Body extends StatelessWidget {
               right: -defaultSize * 7.5,
               child: Hero(
                 tag: product.id,
-                child: Image.network(
-                  product.image,
+                child: Image.asset(
+                  'assets/${data['name']}.png',
                   fit: BoxFit.cover,
                   height: defaultSize * 37.8, //378
                   width: defaultSize * 36.4,

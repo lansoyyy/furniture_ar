@@ -5,11 +5,6 @@ List<Map<String, String>> allData = [
         "This armchair is an elegant and functional piece of furniture. It is made of wood and fabric. It is fit for aesthetic themed house."
   },
   {
-    "name": "Modern Chair",
-    "description":
-        "This armchair is perfect to be an outdoor furniture. It is made of fabric and wood. It can paired with wooden table."
-  },
-  {
     "name": "Brown Fabric Armchair",
     "description":
         "This armchair is suitable for family visits and perfect for relaxing in front of the TV after work."

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:furniture_app/data/furniture_data.dart';
 import 'package:furniture_app/models/Product.dart';
 import 'package:furniture_app/screens/details/details_screen.dart';
 
+import '../../../components/title_text.dart';
+import '../../../constants.dart';
 import '../../../size_config.dart';
-import 'product_card.dart';
 
 class RecommandProducts extends StatelessWidget {
   const RecommandProducts({
@@ -18,30 +20,60 @@ class RecommandProducts extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(defaultSize * 2), //20
       child: GridView.builder(
-        // We just turn off grid view scrolling
-        shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        // just for demo
-        itemCount: products.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount:
-              SizeConfig.orientation == Orientation.portrait ? 2 : 4,
-          mainAxisSpacing: 20,
-          crossAxisSpacing: 20,
-          childAspectRatio: 0.693,
-        ),
-        itemBuilder: (context, index) => ProductCard(
-            product: products[index],
-            press: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DetailsScreen(
-                      product: products[index],
+          // We just turn off grid view scrolling
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          // just for demo
+          itemCount: allData.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount:
+                SizeConfig.orientation == Orientation.portrait ? 2 : 4,
+            mainAxisSpacing: 20,
+            crossAxisSpacing: 20,
+            childAspectRatio: 0.693,
+          ),
+          itemBuilder: (context, index) => GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailsScreen(
+                          data: allData[index],
+                        ),
+                      ));
+                },
+                child: Container(
+                  width: defaultSize * 14.5, //145
+                  decoration: BoxDecoration(
+                    color: kSecondaryColor,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: AspectRatio(
+                    aspectRatio: 0.693,
+                    child: Column(
+                      children: <Widget>[
+                        AspectRatio(
+                          aspectRatio: 1,
+                          child: Hero(
+                            tag: product.id,
+                            child: Image.asset(
+                              'assets/${allData[index]['name']!}.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: defaultSize),
+                          child: TitleText(title: allData[index]['name']!),
+                        ),
+                        SizedBox(height: defaultSize / 2),
+                        Spacer(),
+                      ],
                     ),
-                  ));
-            }),
-      ),
+                  ),
+                ),
+              )),
     );
   }
 }
