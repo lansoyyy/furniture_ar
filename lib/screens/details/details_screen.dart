@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:furniture_app/constants.dart';
-import 'package:furniture_app/models/Product.dart';
 import 'package:furniture_app/samp.dart';
 import 'package:furniture_app/size_config.dart';
 
@@ -42,9 +41,8 @@ class DetailsScreen extends StatelessWidget {
           ),
           onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => HelloWorld(
-                      image: product.image,
-                    )));
+                builder: (context) =>
+                    HelloWorld('assets/${data['name']}.png')));
           },
         ),
         Center(
