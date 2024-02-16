@@ -5,6 +5,7 @@ import 'package:furniture_app/screens/auth/pages/login_page.dart';
 import 'package:furniture_app/screens/auth/pages/register_page.dart';
 import 'package:furniture_app/screens/auth/values/app_constants.dart';
 import 'package:furniture_app/screens/auth/values/app_routes.dart';
+import 'package:furniture_app/screens/home/home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:camera/camera.dart';
 
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.loginScreen: (context) => const LoginPage(),
         AppRoutes.registerScreen: (context) => const RegisterPage(),
       },
-      home: LoginPage(),
+      home: HomeScreen(),
     );
   }
 }

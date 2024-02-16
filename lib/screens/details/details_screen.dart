@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:furniture_app/constants.dart';
+import 'package:furniture_app/data/furniture_data.dart';
+import 'package:furniture_app/new_ar_view.dart';
 import 'package:furniture_app/samp.dart';
 import 'package:furniture_app/size_config.dart';
 
@@ -34,24 +36,54 @@ class DetailsScreen extends StatelessWidget {
         },
       ),
       actions: <Widget>[
-        IconButton(
-          icon: SvgPicture.asset(
-            "assets/icons/scan.svg",
-            height: SizeConfig.defaultSize! * 2.4, //24
-          ),
-          onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) =>
-                    HelloWorld('assets/${data['name']}.png')));
-          },
+        Row(
+          children: [
+            IconButton(
+              icon: SvgPicture.asset(
+                "assets/icons/scan.svg",
+                height: SizeConfig.defaultSize! * 2.4, //24
+              ),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) =>
+                        HelloWorld('assets/${data['name']}.png')));
+              },
+            ),
+            Center(
+              child: Text(
+                "View",
+                style:
+                    TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(width: SizeConfig.defaultSize),
+          ],
         ),
-        Center(
-          child: Text(
-            "View",
-            style: TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
-          ),
-        ),
-        SizedBox(width: SizeConfig.defaultSize),
+        for (int i = 0; i < models.length; i++)
+          if (models[i] == data['name'])
+            Row(
+              children: [
+                IconButton(
+                  icon: Icon(
+                    Icons.emoji_nature_sharp,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ARView(
+                            name: models[i].toString().replaceAll(' ', ''))));
+                  },
+                ),
+                Center(
+                  child: Text(
+                    "3D View",
+                    style: TextStyle(
+                        color: kTextColor, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                SizedBox(width: SizeConfig.defaultSize),
+              ],
+            ),
       ],
     );
   }

@@ -145,3 +145,16 @@ List<Map<String, String>> allData = [
         "One of the most popular and hardy of houseplants, it’s virtually indestructible and adaptable to almost any condition."
   },
 ];
+
+List models = [
+  'Areca Palm',
+  'Broadleaf Lady Palm',
+  'Brown Leather Armchair',
+  'Gray Fabric Armchair',
+  'Light Brown Fabric Armchair',
+  'Sansevieria Zeylanica',
+  'Strelitzia Nicolai',
+  'Tuxedo',
+  'Wood and Steel Dining Table',
+  'Wooden Table with Metal Leg'
+];
