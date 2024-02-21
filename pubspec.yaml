@@ -30,8 +30,9 @@ dependencies:
   flutter_svg:
   google_fonts:
   http:
-  arcore_flutter_plugin: ^0.1.0
-  ar_core:
+
+
+
   firebase_core:
   cloud_firestore:
   firebase_storage:
@@ -41,6 +42,7 @@ dependencies:
   babylonjs_viewer:
   camerawesome:
   model_viewer_plus:
+  sceneview_flutter:
   
 
 dev_dependencies:

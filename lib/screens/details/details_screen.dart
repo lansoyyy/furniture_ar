@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:furniture_app/constants.dart';
 import 'package:furniture_app/data/furniture_data.dart';
 import 'package:furniture_app/new_ar_view.dart';
-import 'package:furniture_app/samp.dart';
+
 import 'package:furniture_app/size_config.dart';
 
 import 'components/body.dart';
@@ -44,9 +44,9 @@ class DetailsScreen extends StatelessWidget {
                 height: SizeConfig.defaultSize! * 2.4, //24
               ),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) =>
-                        HelloWorld('assets/${data['name']}.png')));
+                // Navigator.of(context).push(MaterialPageRoute(
+                //     builder: (context) =>
+                //         HelloWorld('assets/${data['name']}.png')));
               },
             ),
             Center(
