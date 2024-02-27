@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:furniture_app/constants.dart';
-import 'package:furniture_app/data/furniture_data.dart';
-import 'package:furniture_app/new_ar_view.dart';
 
 import 'package:furniture_app/size_config.dart';
+import 'package:model_viewer_plus/model_viewer_plus.dart';
 
 import 'components/body.dart';
 
@@ -21,8 +20,22 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: kSecondaryColor,
       appBar: buildAppBar(context),
-      body: Body(
-        data: data,
+      body: Stack(
+        children: [
+          ModelViewer(
+            backgroundColor: Color.fromARGB(0xFF, 0xEE, 0xEE, 0xEE),
+            src: 'assets/sofa/Areca Palm.png',
+            alt: 'A 3D model of an astronaut',
+            ar: true,
+            autoRotate: true,
+            iosSrc:
+                'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
+            disableZoom: true,
+          ),
+          Body(
+            data: data,
+          ),
+        ],
       ),
     );
   }
@@ -35,56 +48,6 @@ class DetailsScreen extends StatelessWidget {
           Navigator.pop(context);
         },
       ),
-      actions: <Widget>[
-        Row(
-          children: [
-            IconButton(
-              icon: SvgPicture.asset(
-                "assets/icons/scan.svg",
-                height: SizeConfig.defaultSize! * 2.4, //24
-              ),
-              onPressed: () {
-                // Navigator.of(context).push(MaterialPageRoute(
-                //     builder: (context) =>
-                //         HelloWorld('assets/${data['name']}.png')));
-              },
-            ),
-            Center(
-              child: Text(
-                "View",
-                style:
-                    TextStyle(color: kTextColor, fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(width: SizeConfig.defaultSize),
-          ],
-        ),
-        for (int i = 0; i < models.length; i++)
-          if (models[i] == data['name'])
-            Row(
-              children: [
-                IconButton(
-                  icon: Icon(
-                    Icons.emoji_nature_sharp,
-                    color: Colors.black,
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ARView(
-                            name: models[i].toString().replaceAll(' ', ''))));
-                  },
-                ),
-                Center(
-                  child: Text(
-                    "3D View",
-                    style: TextStyle(
-                        color: kTextColor, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                SizedBox(width: SizeConfig.defaultSize),
-              ],
-            ),
-      ],
     );
   }
 }

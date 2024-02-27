@@ -38,11 +38,9 @@ dependencies:
   firebase_storage:
   firebase_auth:
   fluttertoast:
-  flutter_cube:
-  babylonjs_viewer:
-  camerawesome:
+
+  arcore_flutter_plugin:
   model_viewer_plus:
-  sceneview_flutter:
   
 
 dev_dependencies:

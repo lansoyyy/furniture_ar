@@ -26,7 +26,6 @@ class ProductInfo extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Product', style: lightTextStyle),
             SizedBox(height: defaultSize),
             Text(
               product['name'],
@@ -37,6 +36,7 @@ class ProductInfo extends StatelessWidget {
                 height: 1.4,
               ),
             ),
+            Text(product['description'], style: lightTextStyle),
 
             SizedBox(height: defaultSize * 2), //20
             Text("Available Colors", style: lightTextStyle),

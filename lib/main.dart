@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:furniture_app/constants.dart';
-import 'package:furniture_app/new.dart';
 import 'package:furniture_app/screens/auth/pages/login_page.dart';
 import 'package:furniture_app/screens/auth/pages/register_page.dart';
 import 'package:furniture_app/screens/auth/values/app_constants.dart';
@@ -46,7 +45,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.loginScreen: (context) => const LoginPage(),
         AppRoutes.registerScreen: (context) => const RegisterPage(),
       },
-      home: New(),
+      home: LoginPage(),
     );
   }
 }

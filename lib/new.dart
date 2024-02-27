@@ -1,36 +1,23 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
+import 'package:model_viewer_plus/model_viewer_plus.dart';
 
-import 'package:sceneview_flutter/sceneview_flutter.dart';
-
-class New extends StatefulWidget {
-  const New({super.key});
-
-  @override
-  State<New> createState() => _NewState();
-}
-
-class _NewState extends State<New> {
-  SceneViewController _controller = SceneViewController();
-
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(const Duration(seconds: 1)).then((value) {
-      if (!mounted) return;
-
-      _controller.displayDemo();
-    });
-  }
+class HelloWorld extends StatelessWidget {
+  const HelloWorld({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Scene view example app'),
+        appBar: AppBar(title: const Text('Model Viewer')),
+        body: const ModelViewer(
+          backgroundColor: Color.fromARGB(0xFF, 0xEE, 0xEE, 0xEE),
+          src: 'assets/sofa/Tuxedo.glb',
+          alt: 'A 3D model of an astronaut',
+          ar: true,
+          autoRotate: true,
+          iosSrc: 'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
+          disableZoom: true,
         ),
-        body: SceneView(_controller),
       ),
     );
   }
