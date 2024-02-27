@@ -10,18 +10,16 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double defaultSize = SizeConfig.defaultSize!;
-    return SingleChildScrollView(
-      child: SizedBox(
-        width: double.infinity,
-        height: SizeConfig.orientation! == Orientation.landscape
-            ? SizeConfig.screenWidth
-            : SizeConfig.screenHeight! - AppBar().preferredSize.height,
-        child: Stack(
-          // crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            ProductInfo(product: data),
-          ],
-        ),
+    return SizedBox(
+      width: double.infinity,
+      height: 2000,
+      child: Stack(
+        // crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+              color: Colors.white.withOpacity(0.80),
+              child: ProductInfo(product: data)),
+        ],
       ),
     );
   }
