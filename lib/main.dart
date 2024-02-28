@@ -7,6 +7,7 @@ import 'package:furniture_app/screens/auth/pages/register_page.dart';
 import 'package:furniture_app/screens/auth/values/app_constants.dart';
 import 'package:furniture_app/screens/auth/values/app_routes.dart';
 import 'package:furniture_app/screens/home/home_screen.dart';
+import 'package:furniture_app/screens/splash_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'firebase_options.dart';
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
             if (snapshot.hasData) {
               return HomeScreen();
             } else {
-              return const LoginPage();
+              return SplashScreen();
             }
           }),
     );
