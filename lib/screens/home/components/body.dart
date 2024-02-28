@@ -33,11 +33,11 @@ class Body extends StatelessWidget {
                         name: 'Armchairs',
                         numbers: '8',
                         image: 'assets/Accent Chair.png'),
-                    CategoryCard(
-                        category: category,
-                        name: 'Plants',
-                        numbers: '4',
-                        image: 'assets/Areca Palm.png'),
+                    // CategoryCard(
+                    //     category: category,
+                    //     name: 'Plants',
+                    //     numbers: '4',
+                    //     image: 'assets/Areca Palm.png'),
                     CategoryCard(
                         category: category,
                         name: 'Sofa',
