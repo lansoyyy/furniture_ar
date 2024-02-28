@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:furniture_app/constants.dart';
@@ -5,6 +6,7 @@ import 'package:furniture_app/screens/auth/pages/login_page.dart';
 import 'package:furniture_app/screens/auth/pages/register_page.dart';
 import 'package:furniture_app/screens/auth/values/app_constants.dart';
 import 'package:furniture_app/screens/auth/values/app_routes.dart';
+import 'package:furniture_app/screens/home/home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'firebase_options.dart';
@@ -45,7 +47,15 @@ class MyApp extends StatelessWidget {
         AppRoutes.loginScreen: (context) => const LoginPage(),
         AppRoutes.registerScreen: (context) => const RegisterPage(),
       },
-      home: LoginPage(),
+      home: StreamBuilder<User?>(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return HomeScreen();
+            } else {
+              return const LoginPage();
+            }
+          }),
     );
   }
 }
