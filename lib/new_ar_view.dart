@@ -12,8 +12,9 @@ class _HelloWorld1State extends State<HelloWorld1> {
     return Scaffold(
       appBar: AppBar(title: const Text('Model Viewer')),
       body: ModelViewer(
+        innerModelViewerHtml: '',
         backgroundColor: Color.fromARGB(0xFF, 0xEE, 0xEE, 0xEE),
-        src: 'assets/sofa/modernbed.glb',
+        src: 'assets/sofa/sofa_48.glb',
         alt: 'A 3D model of an astronaut',
         ar: true,
         autoRotate: true,

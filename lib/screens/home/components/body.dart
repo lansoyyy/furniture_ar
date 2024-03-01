@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_app/components/title_text.dart';
+import 'package:furniture_app/data/furniture_data.dart';
 import 'package:furniture_app/models/Categories.dart';
 import 'package:furniture_app/models/Product.dart';
 import 'package:furniture_app/screens/home/components/category_card.dart';
@@ -30,24 +31,52 @@ class Body extends StatelessWidget {
                   children: [
                     CategoryCard(
                         category: category,
-                        name: 'Armchairs',
-                        numbers: '8',
-                        image: 'assets/Accent Chair.png'),
-                    // CategoryCard(
-                    //     category: category,
-                    //     name: 'Plants',
-                    //     numbers: '4',
-                    //     image: 'assets/Areca Palm.png'),
+                        name: 'Bed',
+                        numbers:
+                            '${allData.where((car) => car['category'] == 'Bed').length}',
+                        image: 'assets/light gray.png'),
+                    CategoryCard(
+                        category: category,
+                        name: 'Bookcase',
+                        numbers:
+                            '${allData.where((car) => car['category'] == 'Bookcase').length}',
+                        image: 'assets/bookcase.png'),
+                    CategoryCard(
+                        category: category,
+                        name: 'Chairs',
+                        numbers:
+                            '${allData.where((car) => car['category'] == 'Armchair').length}',
+                        image: 'assets/armchair poppi.png'),
+                    CategoryCard(
+                        category: category,
+                        name: 'Computer Desk',
+                        numbers:
+                            '${allData.where((car) => car['category'] == 'Computer Desk').length}',
+                        image: 'assets/computer desk 1.png'),
+                    CategoryCard(
+                        category: category,
+                        name: 'Dining Table',
+                        numbers:
+                            '${allData.where((car) => car['category'] == 'Tables and Chair').length}',
+                        image: 'assets/dining table and chairs.png'),
+                    CategoryCard(
+                        category: category,
+                        name: 'Lampshade',
+                        numbers:
+                            '${allData.where((car) => car['category'] == 'Lampshade').length}',
+                        image: 'assets/table lamp.png'),
                     CategoryCard(
                         category: category,
                         name: 'Sofa',
-                        numbers: '10',
-                        image: 'assets/Channel Back.png'),
+                        numbers:
+                            '${allData.where((car) => car['category'] == 'Sofa').length}',
+                        image: 'assets/sofa.png'),
                     CategoryCard(
                         category: category,
-                        name: 'Tables and Chairs',
-                        numbers: '7',
-                        image: 'assets/Dining Table.png'),
+                        name: 'TV Stand',
+                        numbers:
+                            '${allData.where((car) => car['category'] == 'TV Stand').length}',
+                        image: 'assets/white tv stand.png'),
                   ],
                 )),
             Divider(height: 5),
