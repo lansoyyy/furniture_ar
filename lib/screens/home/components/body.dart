@@ -77,6 +77,12 @@ class Body extends StatelessWidget {
                         numbers:
                             '${allData.where((car) => car['category'] == 'TV Stand').length}',
                         image: 'assets/white tv stand.png'),
+                    CategoryCard(
+                        category: category,
+                        name: 'Doors',
+                        numbers:
+                            '${allData.where((car) => car['category'] == 'Doors').length}',
+                        image: 'assets/doors/Gray Design Door.png'),
                   ],
                 )),
             Divider(height: 5),

@@ -382,4 +382,43 @@ List<Map<String, String>> allData = [
     "model": "assets/TvStand/tv_stand",
     "category": "TV Stand"
   },
+  {
+    "name": "Modern design front door",
+    "description":
+        "Installed on Solid Wood Doors, Timber Door, Glass and Aluminum Doors, Gate Doors and Entry Store Front Doors",
+    "image": "assets/doors/Modern design front door",
+    "model": "assets/doors/modern_door",
+    "category": "Doors"
+  },
+  {
+    "name": "Dark Door",
+    "description":
+        "This doors have different finishes with endless designs to choose from. Laminate finishes offer a variety of colors and wood grain appearances. For a more traditional look, veneers finishes are the perfect choice.",
+    "image": "assets/doors/Dark Door",
+    "model": "assets/doors/door",
+    "category": "Doors"
+  },
+  {
+    "name": "Simple Design Door",
+    "description": "This door is simple but made in solid wood.",
+    "image": "assets/doors/Simple Design Door",
+    "model": "assets/doors/door(1)",
+    "category": "Doors"
+  },
+  {
+    "name": "Wooden Door",
+    "description":
+        "Wood doors used in residential construction come in three types: solid wood, hollow core, and solid core. Each type of door is constructed differently and has its own advantages and disadvantages.",
+    "image": "assets/doors/Wooden Door",
+    "model": "assets/doors/door_external",
+    "category": "Doors"
+  },
+  {
+    "name": "Gray Design Door",
+    "description":
+        "The solid core door has a mixture of wood particles glued together with heat, resins and hydraulic pressure to produce a uniform, consistent product that conform the core of the door.",
+    "image": "assets/doors/Gray Design Door",
+    "model": "assets/doors/door(2)",
+    "category": "Doors"
+  },
 ];
