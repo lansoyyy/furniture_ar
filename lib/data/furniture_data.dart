@@ -95,4 +95,52 @@ List<Map<String, String>> allData = [
     "model": "assets/bed/kellypoliformbed",
     "category": "Bed"
   },
+  {
+    "name": "Black and White Dining Table Set",
+    "description":
+        "This table and chairs are made from wood. It is perfect for dining area with black and white themed house.",
+    "image": "assets/images/Black and White Dining Table Set.png",
+    "model": "assets/diningtable/blackandwhitediningtableset",
+    "category": "Tables and Chair"
+  },
+  {
+    "name": "Modern Dining Table Set",
+    "description":
+        "This dining table is made from marble and the chairs are made from fabric and woods. This is perfect for aesthetic themed house.",
+    "image": "assets/images/Modern Dining Table Set.png",
+    "model": "assets/diningtable/moderndiningtableset",
+    "category": "Tables and Chair"
+  },
+  {
+    "name": "Wooden Set Dining Table",
+    "description":
+        "This dining table is made from woods. It is an all wood set perfect for your dining area.",
+    "image": "assets/images/Wooden Set Dining Table.png",
+    "model": "assets/diningtable/woodensetdiningtable",
+    "category": "Tables and Chair"
+  },
+  {
+    "name": "Glass Table",
+    "description":
+        "This coffee table is made from glass and wood, perfect for aesthetic themed house.",
+    "image": "assets/images/fancy.jpg",
+    "model": "assets/diningtable/coffee_table_glass_wood",
+    "category": "Tables and Chair"
+  },
+  {
+    "name": "Dark Door",
+    "description":
+        "This doors have different finishes with endless designs to choose from. Laminate finishes offer a variety of colors and wood grain appearances. For a more traditional look, veneers finishes are the perfect choice.",
+    "image": "assets/doors/Dark Door",
+    "model": "assets/doors/door",
+    "category": "Doors"
+  },
+  {
+    "name": "Modern design front door",
+    "description":
+        "Installed on Solid Wood Doors, Timber Door, Glass and Aluminum Doors, Gate Doors and Entry Store Front Doors",
+    "image": "assets/doors/Modern design front door",
+    "model": "assets/doors/modern_door",
+    "category": "Doors"
+  },
 ];

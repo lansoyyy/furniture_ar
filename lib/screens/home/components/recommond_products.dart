@@ -57,7 +57,9 @@ class RecommandProducts extends StatelessWidget {
                           child: Hero(
                             tag: product.id,
                             child: Image.asset(
-                              'assets/images/${allData[index]['name']!}.png',
+                              allData[index]['name']! == 'Glass Table'
+                                  ? 'assets/images/fancy.jpg'
+                                  : 'assets/images/${allData[index]['name']!}.png',
                               fit: BoxFit.cover,
                             ),
                           ),
