@@ -22,7 +22,7 @@ class Body extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(defaultSize * 2), //20
               child: TitleText(
-                title: "Browse by Categories",
+                title: "Categories",
               ),
             ),
             SingleChildScrollView(
@@ -34,61 +34,25 @@ class Body extends StatelessWidget {
                         name: 'Bed',
                         numbers:
                             '${allData.where((car) => car['category'] == 'Bed').length}',
-                        image: 'assets/light gray.png'),
-                    CategoryCard(
-                        category: category,
-                        name: 'Bookcase',
-                        numbers:
-                            '${allData.where((car) => car['category'] == 'Bookcase').length}',
-                        image: 'assets/bookcase.png'),
+                        image: 'assets/images/Poliform Bed.png'),
                     CategoryCard(
                         category: category,
                         name: 'Chairs',
                         numbers:
                             '${allData.where((car) => car['category'] == 'Armchair').length}',
-                        image: 'assets/armchair poppi.png'),
-                    CategoryCard(
-                        category: category,
-                        name: 'Computer Desk',
-                        numbers:
-                            '${allData.where((car) => car['category'] == 'Computer Desk').length}',
-                        image: 'assets/computer desk 1.png'),
-                    CategoryCard(
-                        category: category,
-                        name: 'Dining Table',
-                        numbers:
-                            '${allData.where((car) => car['category'] == 'Tables and Chair').length}',
-                        image: 'assets/dining table and chairs.png'),
-                    CategoryCard(
-                        category: category,
-                        name: 'Lampshade',
-                        numbers:
-                            '${allData.where((car) => car['category'] == 'Lampshade').length}',
-                        image: 'assets/table lamp.png'),
+                        image: 'assets/images/Blue Chair.png'),
                     CategoryCard(
                         category: category,
                         name: 'Sofa',
                         numbers:
                             '${allData.where((car) => car['category'] == 'Sofa').length}',
-                        image: 'assets/sofa.png'),
-                    CategoryCard(
-                        category: category,
-                        name: 'TV Stand',
-                        numbers:
-                            '${allData.where((car) => car['category'] == 'TV Stand').length}',
-                        image: 'assets/white tv stand.png'),
-                    CategoryCard(
-                        category: category,
-                        name: 'Doors',
-                        numbers:
-                            '${allData.where((car) => car['category'] == 'Doors').length}',
-                        image: 'assets/doors/Gray Design Door.png'),
+                        image: 'assets/images/Basic Sofa.png'),
                   ],
                 )),
             Divider(height: 5),
             Padding(
               padding: EdgeInsets.all(defaultSize * 2), //20
-              child: TitleText(title: "Recommands For You"),
+              child: TitleText(title: "Recommended For You"),
             ),
             FutureBuilder(
               future: fetchProducts(),

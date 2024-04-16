@@ -37,26 +37,6 @@ class ProductInfo extends StatelessWidget {
               ),
             ),
             Text(product['description'], style: lightTextStyle),
-
-            SizedBox(height: defaultSize * 2), //20
-            Text("Available Colors", style: lightTextStyle),
-            Row(
-              children: <Widget>[
-                buildColorBox(
-                  defaultSize,
-                  color: Color(0xFF7BA275),
-                  isActive: true,
-                ),
-                buildColorBox(
-                  defaultSize,
-                  color: Color(0xFFD7D7D7),
-                ),
-                buildColorBox(
-                  defaultSize,
-                  color: kTextColor,
-                ),
-              ],
-            ),
           ],
         ),
       ),
